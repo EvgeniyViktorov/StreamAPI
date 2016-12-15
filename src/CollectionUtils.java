@@ -84,13 +84,11 @@ public class CollectionUtils {
 
     public static <E> List<E> distinct(List<E> elements) {
         List<E> result = new ArrayList<>();
+        Set<E> tempSet = new HashSet<>();
         for (E element : elements) {
-            if (result.contains(element)) {
-                continue;
-            } else {
-                result.add(element);
-            }
+                tempSet.add(element);
         }
+        result.addAll(tempSet);
         return result;
     }
 
